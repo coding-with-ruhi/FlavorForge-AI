@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f4f5f0;
+  --color-brand-100: #e4e7dd;
+  --color-brand-200: #cbd1bf;
+  --color-brand-300: #abb499;
+  --color-brand-400: #8c9775;
+  --color-brand-500: #717d5b;
+  --color-brand-600: #576246;
+  --color-brand-700: #464f39;
+  --color-brand-800: #3a4130;
+  --color-brand-900: #32372a;
+  --color-brand-950: #1b1e16;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-50);
+  background-image: radial-gradient(at 0% 0%, hsla(78,25%,70%,0.25) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(78,25%,70%,0.25) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--color-brand-950);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-lg border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(87,98,70,0.1)] transition-all duration-300;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
